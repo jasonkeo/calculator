@@ -123,6 +123,7 @@
     <audio id="bang2" src="./noise/bang2.mp3"></audio>
 </body>
 <script>
+let init = 4;
 let check = 0
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -131,9 +132,10 @@ function getRandomInt(min, max) {
 }
 
 function playSound() {
-    if (check >= 7) {
+    if (check >= init) {
         document.getElementById('lyrics').style.display = 'block';
         var song = document.getElementById('song');
+        init = 9;
         song.play().then(function() {
             setTimeout(function() {
                 check = 0;
